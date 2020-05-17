@@ -199,7 +199,7 @@ methods:{
         //crud example
     //another sample updated to crud branch
     //crud after admin priveleges to vs code.
-
+  //another one try
         db.collection("products")
     .onSnapshot((querySnapshot)=> {
          this.products = [];
