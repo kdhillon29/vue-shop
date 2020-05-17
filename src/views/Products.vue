@@ -196,6 +196,7 @@ data() {
     },
 methods:{
     watcher(){
+        //crud example
         db.collection("products")
     .onSnapshot((querySnapshot)=> {
          this.products = [];
