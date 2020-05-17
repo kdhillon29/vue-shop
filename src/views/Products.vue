@@ -197,6 +197,8 @@ data() {
 methods:{
     watcher(){
         //crud example
+    //another sample updated to crud branch
+
         db.collection("products")
     .onSnapshot((querySnapshot)=> {
          this.products = [];
