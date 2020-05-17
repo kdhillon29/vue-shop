@@ -198,6 +198,7 @@ methods:{
     watcher(){
         //crud example
     //another sample updated to crud branch
+    //crud after admin priveleges to vs code.
 
         db.collection("products")
     .onSnapshot((querySnapshot)=> {
