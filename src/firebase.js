@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 require("firebase/firestore");
-
+require("firebase/storage");
 var firebaseConfig = {
     apiKey: "AIzaSyA7w4PkzckhW3Fq_WagfR_EDNqujweZWG4",
     authDomain: "vue-shop-bae3f.firebaseapp.com",

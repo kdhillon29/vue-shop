@@ -250,7 +250,7 @@
 </template>
 
 <script>
- import {fb} from '../firebase';
+ import {fb,db} from '../firebase';
 //  import jQuery from 'jquery';
 //  let $=jQuery;
 export default {
@@ -367,15 +367,24 @@ export default {
       fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
+          console.log('user is:',user)
           this.isSuccess=true;
            this.isSubmitting=false;
-          setTimeout(()=>{
-           
-          console.log('user is:',user)
-          this.$bvModal.hide("modal-1")
-           this.$router.replace("admin");
-
-          },3000)
+           db.collection("profiles")
+            .doc(user.user.uid)
+            .set({
+              name: this.name
+            })
+            .then((data)=> {
+              console.log("Document successfully written!",data);
+              
+               this.$bvModal.hide("modal-1")
+              this.$router.replace("admin");
+            })
+            .catch(function(error) {
+              console.error("Error writing document: ", error);
+            });
+          
           
           // $("#login").modal("hide");
 

@@ -23,7 +23,7 @@
                         <span class="user-name">Jhon
                             <strong>Smith</strong>
                         </span>
-                        <span class="user-role"> {{email}} </span>
+                        <span class="user-role"> <em> {{email}}</em> </span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -70,7 +70,7 @@
                                 <span>Orders</span>
                             </router-link>
                         </li>
-
+                        
                         <li>
                             <router-link to="/admin/profile">
                                 <i class="fa fa-user"></i>
@@ -122,8 +122,8 @@ export default {
     //Hero
   },
   created(){
-       // let user = fb.auth().currentUser;
-    //  this.email = user.email;
+        let user = fb.auth().currentUser;
+     this.email = user.email;
   },
   mounted(){
 
@@ -170,7 +170,7 @@ export default {
 
 <style scoped lang="scss">
 .ps{
-    height:200px;
+    height:250px;
     margin-right:3px
 }
 </style>

@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 import Admin from "../views/Admin.vue";
 import Overview from "../views/Overview.vue";
 import Products from "../views/Products.vue";
+import Profile from "../views/Profile.vue";
+import Orders from "../views/Orders.vue";
+//import ProdList from "../views/ProdList.vue";
 import {fb} from '../firebase';
 
 Vue.use(VueRouter);
@@ -31,16 +34,16 @@ const routes = [
         name: "products",
         component: Products
       },
-      // {
-      //   path: "profile",
-      //   name: "profile",
-      //   component: Profile
-      // },
-      // {
-      //   path: "orders",
-      //   name: "orders",
-      //   component: Orders
-      // }
+      {
+        path: "profile",
+        name: "profile",
+        component: Profile
+      },
+      {
+        path: "orders",
+        name: "orders",
+        component: Orders
+      }
     ]
   },
   {
@@ -51,6 +54,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/products",
+    name: "Products",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/ProdList.vue")
   }
 ];
 
