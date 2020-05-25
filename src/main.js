@@ -15,6 +15,12 @@ import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 // window.JQuery = jQuery;
 import Swal from 'sweetalert2';
 
+import store from './store.js';
+
+
+
+Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
+Vue.component('mini-cart', require('./components/MiniCart.vue').default);
 window.Swal = Swal;
 
 Vue.use(VueFirestore, {
@@ -46,8 +52,10 @@ Vue.use(Vue2Filters)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false;
+ 
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount("#app");

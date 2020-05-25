@@ -1,5 +1,5 @@
 <template>
-      <div> 
+      <div class="hero"> 
         <!-- <b-jumbotron header="Vue Shop" lead =" A simple E-commerce in Vue."> 
          
         
@@ -10,7 +10,7 @@
     </template> 
      </b-jumbotron> -->
         
-      <b-jumbotron fluid bg-variant="primary" > 
+      <b-jumbotron fluid bg-variant="primary" class="vh-100 " > 
          <b-row  class="h-100 justify-content-center align-items-center">  
         <b-col  > 
         <!-- <template v-slot:header>Vue Shop </template>
@@ -18,7 +18,7 @@
     <template v-slot:lead>
      A simple E-commerce in Vue.
     </template> -->
-       <h1 class="display-3">Vue Shop</h1>
+       <h1 class="display-5">Vue Shop</h1>
        <p class="lead"> A simple E-commerce in Vue.   </p>
        <p>For more information visit website</p>
 
@@ -83,6 +83,15 @@ export default {
     width: 100%;
     height: 500px;
     text-align: left;
+   // background: linear-gradient(90deg, #d53369 0%, #daae51 100%) !important;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  };
+  .bg-primary{
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+//      background: rgb(63,94,251) !important;
+// background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%) !important;
+   // background-color: #659DBD !important;
   }
 
 </style>

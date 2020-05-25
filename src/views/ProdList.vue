@@ -2,31 +2,36 @@
   <div class="products" id="products">
       <div class="container">
           <h2 class="text-center p-1">Our Products List</h2>
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-between">
               
-              <div class="col-md-3 " v-for="(product,index) in products " :key="index">
+              <div class=" col-6 col-md-3 offset-md-1 my-2 " v-for="(product,index) in products " :key="index">
                   <div class="card product-item">
 
                         <carousel :perPage="1">
                           <slide v-for="(image, index) in product.images" :key="index">
-                                <img :src="image" class="card-img-top" alt="..." width="250px">
+                                <img :src="image" class="card-img-top" alt="..." width="80px" height="100px">
                           </slide>
                         </carousel>
                 
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <h5 class="card-title">{{ product.name }}</h5>
+                        <div class="card-body bg-info text-white">
+                          <div class="d-flex p-1 justify-content-between">
+                            <h6 class="card-titlepx-1">{{ product.name }}</h6>
                             <!-- <h5 class="card-priceS">{{ product.price }}</h5> -->
-                            <h5 class="card-priceS">{{ product.price | currency }}</h5>
+                            <h6 class="card-priceS">{{ product.price | currency }}</h6>
 
                           </div>
-                           
+                             <!-- <b-btn variant="primary" bg-variant ="success">Add to cart</b-btn> -->
+                           <div class ="float-right">
+
                             <add-to-cart 
-                                :image="getImage(product.images)"
-                                :p-id="product.id"
+                                :image="product.images[0]"
+                                :pid="product.id"
                                 :price="product.price"
-                                :name="product.name">
+                                :name="product.name"
+                                :quantity=1
+                                >
                             </add-to-cart>
+                            </div>
                         </div>
                     </div>
               </div>
@@ -80,5 +85,8 @@ data(){
         margin-top: 7rem;
         background: #f2f2f2;
         padding-bottom: 3rem;
+    };
+    .bg-info{
+      background-color: rgb(126, 121, 133) !important;
     }
 </style>

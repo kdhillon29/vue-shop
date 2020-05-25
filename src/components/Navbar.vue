@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div>
-  <b-navbar toggleable="lg" type="dark" fixed="top"  variant="info">
+  <b-navbar toggleable="lg" type="dark" fixed="top"   variant="info">
     <b-navbar-brand href="#">Vue Shop</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -21,7 +21,15 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
           </b-nav-form> 
           <b-nav-item > <b-button size="sm" class="mt-1"  v-b-modal.modal-1>Login</b-button></b-nav-item>
+           <b-nav-item >
+              <mini-cart> </mini-cart>
+              <b-button size="sm"  @click="$bvModal.show('cartModal')" 
+              class="mt-1 text-white" > <b-icon icon="heart" ></b-icon>cart
+              </b-button>
+             
+    
 
+              </b-nav-item>
         
  <!-- <a class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login">Get Start</a> -->
 
