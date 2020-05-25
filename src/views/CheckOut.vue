@@ -14,9 +14,12 @@
                   {{item.pName}} </p> 
                    <b-badge variant="info" pill>Price:{{item.pPrice|currency}}</b-badge>
                    
-        <b-form-input  size="sm" @change="(e)=>updateQuantity(item.pId,e)" type="number" min="0" max="10"  :value="item.pQuantity"> </b-form-input>
-              <b-badge variant="info" >Total :{{item.totalPrice|currency}}</b-badge>   
-                  <b-badge @click ="removeItem(item.pId)" variant="danger" >X</b-badge> 
+        <b-form-input  size="sm" @change="(e)=>$store.commit('updateCartQuantity',{id:item.pId,e})" type="number" min="0" max="10"  :value="item.pQuantity"> </b-form-input>
+              <b-badge variant="info" >Total :{{item.totalPrice|currency}}</b-badge> 
+                <button type="button"  @click ="$store.commit('removeFromCart',item)" class="close" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                   </button>
+                  
                  </b-list-group-item>
                  
                

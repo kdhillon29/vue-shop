@@ -12,7 +12,10 @@
                    <!-- <b-badge class=""  >{{item.pQuantity}}</b-badge> -->
         <b-form-input  size="sm" @change="(e)=>updateQuantity(item.pId,e)" type="number" min="0" max="10"  :value="item.pQuantity"> </b-form-input>
               <b-badge variant="info" >Total :{{item.totalPrice|currency}}</b-badge>   
-                  <b-badge @click ="$store.commit('removeFromCart',item)" variant="danger" >X</b-badge>
+              <button type="button" @click ="$store.commit('removeFromCart',item)" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                          </button>
+                  
                  </b-list-group-item>
                  
                  <div class="ml-auto "> <h3> Total :{{$store.getters.totalPrice}} </h3></div>
